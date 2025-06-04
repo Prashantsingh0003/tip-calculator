@@ -22,3 +22,8 @@ A clean and simple **Tip Calculator** built using HTML, CSS, and JavaScript. Thi
 
 ---
 
+## 🛠️ Built With
+
+- **HTML5** – for page structure  
+- **CSS3** – for styling and layout  
+- **JavaScript** – for tip calculation logic 
