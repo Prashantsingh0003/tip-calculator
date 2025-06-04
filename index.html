@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tip Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    input, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>💰 Tip Calculator</h2>
+
+  <input type="number" id="bill" placeholder="Enter Bill Amount (₹)">
+  <input type="number" id="tip" placeholder="Enter Tip %">
+  <button onclick="calculateTip()">Calculate</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateTip() {
+      const bill = parseFloat(document.getElementById("bill").value);
+      const tipPercent = parseFloat(document.getElementById("tip").value);
+
+      if (isNaN(bill) || isNaN(tipPercent)) {
+        document.getElementById("result").innerText = "Please enter valid numbers.";
+        return;
+      }
+
+      const tipAmount = bill * (tipPercent / 100);
+      const total = bill + tipAmount;
+
+      document.getElementById("result").innerHTML = `
+        ✅ Tip Amount: ₹${tipAmount.toFixed(2)}<br>
+        💵 Total Bill: ₹${total.toFixed(2)}
+      `;
+    }
+  </script>
+
+</body>
+</html>
